@@ -1,0 +1,33 @@
+● Explain Hive Architecture in Brief.
+
+Architecture of Hive
+
+The following unit describes each operation:
+Major Components of Hive
+
+1. User Interface :- Hive is a data warehouse infrastructure software that can create interaction between user and HDFS. 
+The user interfaces that Hive supports are Hive Web UI, Hive command line, and Hive HD Insight (In Windows server).
+ The user interface for users to submit queries and other operations to the system.
+ 
+ 2. Driver :- The Driver is used for receives the queries from UI .
+ This component implements the notion of session handles and provides execute and fetch APIs modeled on JDBC/ODBC interfaces.
+ 
+ 3. Compiler :- The component that parses the query,
+ does semantic analysis on the different query blocks and query expressions and eventually generates an execution plan with 
+ the help of the table and partition metadata looked up from the metastore.
+ 
+ 4. MetaStore :-  The component that stores all the structure information of the various tables and partitions in the warehouse including column and column type information, 
+ the serializers and deserializers necessary to read and write data and the corresponding HDFS files where the data is stored.
+ Hive chooses respective database servers to store the schema or Metadata of tables, databases, columns in a table, their data types, and HDFS mapping.
+ 
+ 5. HiveQL Process Engine:- HiveQL is similar to SQL for querying on schema info on the Metastore. 
+ It is one of the replacements of traditional approach for MapReduce program. Instead of writing MapReduce program in Java, we can write a query for MapReduce job and process it.
+ 
+ 6.Execution Engine:- The component which executes the execution plan created by the compiler.
+ The plan is a DAG of stages. 
+ The execution engine manages the dependencies between these different stages of the plan and executes these stages on the appropriate system components.
+ The conjunction part of HiveQL process Engine and MapReduce is Hive Execution Engine. 
+ Execution engine processes the query and generates results as same as MapReduce results. It uses the flavor of MapReduce
+ 
+7. HDFS or HBASE :- Hadoop distributed file system or HBASE are the data storage techniques to store data into file system.
+ 
