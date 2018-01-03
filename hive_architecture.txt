@@ -2,7 +2,7 @@
 
 Architecture of Hive
 
-The diagram Hive architecture.png shows how a typical query flows through the system
+The diagram Hive_architecture.png shows how a typical query flows through the system
 
 Step 1 :- The UI calls the execute interface to the Driver
 
